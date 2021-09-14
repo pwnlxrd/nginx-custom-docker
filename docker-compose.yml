@@ -1,0 +1,12 @@
+version: '3'
+services:
+  nginx:
+    container_name: nginx-main
+    build:
+      context: "."
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+      - ./nginx/log/:/var/log/nginx/
